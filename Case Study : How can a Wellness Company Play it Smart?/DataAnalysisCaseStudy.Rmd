@@ -5,6 +5,7 @@ date : 27/07/2022
 output:
   html_document:
     df_print: paged
+    css: style.css
 ---
 
 ### Company Details and My Role
@@ -362,3 +363,22 @@ legend("bottom",c("OverWeight","HealthyWeight"),cex=0.6,fill=colors)
 
 ```
 
+**Observations :**
+
+* The percentage of people with over weight is 62.5% which is high as compared to percentage of people with healthy weigh which is 37.5%. So, there is a very good opportunity to increase the percentage of people with healthy weight.
+
+### Phase 5 : **Act Phase**
+
+**Based on our analysis I have following recommendations:**
+
+1. We have analysed that most of the people use application to track the steps and calories burned;less number of people use it to track sleep and very few use it to track weight records.So, I will suggest to focus on step,calories and sleep tracking more in application.
+
+2. People prefer to track their activities on sunday, monday and tuesday than other week days.I think this behaviour is because people get busier in week end days due to work pressure and they don’t get enough time to track their activity.That’s why people are more active on sunday and starting 2 days of week.
+
+3. The relation between steps taken vs calories burned and very active minutes vs calories burned shows positive correlation.So, this can be a good marketing strategy.
+
+4. Majority of users 81.3% who are using the FitBit app are inactive for longer period of time and not using it for tracking their health habits.So, this can be a great chance to use this information for market strategy as Bellabeat can alert people about their sedentary behaviour time to time either on application or on tracker itself .
+
+5. Majority of the users 62.5% who are using fitness tracker are overweight.So, there is an opportunity to influence the people so that they can become healthier.
+
+6. Bellabeat marketing team can encourage users by educating and equipping them with knowledge about fitness benefits, suggest different types of exercises, calories intake and burn rate information on Bellabeat application.
