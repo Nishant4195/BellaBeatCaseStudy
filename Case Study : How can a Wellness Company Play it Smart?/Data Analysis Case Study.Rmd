@@ -1,0 +1,117 @@
+---
+title: 'Case Study : How can a Wellness Company Play it Smart?'
+author : Nishant Sharma
+date : 27/07/2022
+output:
+  html_document:
+    df_print: paged
+---
+### Company Details and My Role
+
+Bellabeat is a high-tech manufacturer of health-focused products for women. My role in the company is as Junior Data Analyst and I am working with the marketing analyst team. Urška Sršen, co founder and Chief Creative Officer (CEO) of Bellabeat, believes that analyzing smart device fitness data could help unlock new growth opportunities for the company. I have been asked to focus on one of Bellabeat’s products and analyze smart device data to gain insight into how consumers are using their smart devices.
+
+Collecting data on activity, sleep, stress, and reproductive health has allowed Bellabeat to empower women with knowledge about their own health and habits. Since it was founded in 2013, Bellabeat has grown rapidly and quickly positioned itself as a tech-driven wellness company for women.
+
+### Business Task 
+
+Analyze smart device data to gain insight into how consumers are using their smart devices. I am also required to present the  analysis to the Bellabeat executive team along with high-level recommendations for Bellabeat’s marketing strategy.
+
+### Introduction 
+
+This is the capstone project for the Google Data Analytics Certification. Bellabeat data analysis case study includes all the data analysis process : 
+
+  * Ask Phase
+  * Prepare Phase
+  * Process Phase
+  * Analyze Phase
+  * Share Phase
+  * Act Phase
+  
+### Phase 1 : **Ask Phase**
+
+Ask Phase include brief description of the business task which is analyzing the smart devices data and obtaining the insights on how consumers use Bellabeat smart devices. Ask phase is comprised of these main goals :
+
+  * What are some trends in smart device usage?
+  * How could these trends apply to Bellabeat customers?
+  * How could these trends help influence Bellabeat marketing strategy?
+
+Also, it is important to whom we are presenting the solutions to. Mainly our stakeholders are :
+
+  * **Urška Sršen:** Bellabeat’s co-founder and Chief Creative Officer.
+  * **Sando Mur:** Mathematician and Bellabeat’s co-founder; key member of the Bellabeat executive team.
+  * **Bellabeat marketing analytics team:** A team of data analysts responsible for collecting, analyzing, and reporting data that helps guide Bellabeat’s marketing strategy.
+  
+### Phase 2 : **Prepare Phase**
+
+Prepare Phase includes the organization of the data from all the data sources. Sršen suggested me to use the public data set that explores smart devices users' daily habits. Here, we are using a specific data set "FitBit Fitness Tracker Data"  (https://www.kaggle.com/datasets/arashnic/fitbit) made available through Mobius.
+
+This Kaggle data set contains personal fitness tracker from thirty fitbit users. Thirty eligible Fitbit users consented to the submission of personal tracker data, including minute-level output for physical activity, heart rate, and sleep monitoring. It includes information about daily activity, steps, and heart rate that can be used to explore users’ habits. Data is stored in 18 CSV files. 
+
+Data Credibility & Limitations:
+
+  * Reliable - This data could have sample selection bias becasue it doesn't refelct the overall population
+  * Original - This data is third party information
+  * Comprehensive - This data includes all important information needed to answer the business question
+  * Current - The data is 6 years old
+  * Cited - Unknown
+
+Overall, the data source is evaluated as bad data, but it is not relevant at the moment since this is for the capstone project. 
+
+### Phase 3 : **Process Phase**
+
+Process Phase includes processing the data by cleaning and ensuring that it is correct,relevant,complete and error free.
+
+**Tools Used**
+
+I am using **RStudio** for verifying data integrity, cleaning, transformation, analysis and visualization.
+
+Firstly, need to install and read the packages we need for analysis.
+
+We are using the "sqldf" package, which will allow us to emulate SQL syntax when looking at data.
+
+```{r}
+install.packages("sqldf",repos = "http://cran.us.r-project.org")
+```
+
+**Installing other packages:**
+
+```{r}
+# install.packages("tidyverse")
+# install.packages("lubridate")
+# install.packages("ggplot2")
+# install.packages("dplyr")
+# install.packages("skimr")
+# install.packages("janitor")
+```
+
+**Loading the packages:** 
+
+```{r}
+library(sqldf)
+library(tidyverse)
+library(lubridate)
+library(ggplot2)
+library(dplyr)
+library(skimr)
+library(janitor)
+```
+
+**Loading the CSV Files:**
+```{r}
+
+daily_activity <- read.csv("/cloud/project/Fitabase Data/dailyActivity_merged.csv")
+daily_calories <- read.csv("/cloud/project/Fitabase Data/dailyCalories_merged.csv")
+daily_steps <- read.csv("/cloud/project/Fitabase Data/dailySteps_merged.csv")
+weight_log  <- read.csv("/cloud/project/Fitabase Data/weightLogInfo_merged.csv")
+sleep_day <- read.csv("/cloud/project/Fitabase Data/sleepDay_merged.csv")
+
+```
+
+**Exploring the Data:**
+
+
+```{r}
+head(daily_activity)
+str(daily_activity)
+skim(daily_activity)
+```
